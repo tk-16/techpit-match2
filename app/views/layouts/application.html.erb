@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+  <% if flash[:notice] %>
+    <!-- ここにclassを追加する -->
+    <div class="alert alert-info"><%= flash[:notice] %></div>
+  <% end %>
+  <% if flash[:alert] %>
+    <!-- ここにclassを追加する -->
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
+
+  <%= yield %>
+</body>
+
 </html>
